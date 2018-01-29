@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="in.thewire.linuxterminal">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:alwaysRetainTaskState="true"
+
+            android:launchMode="singleTop"
+
+            android:name=".HomeActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".SearchResult" />
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+
+            android:name=".DetailNews"
+            android:label="@string/title_activity_detail_news"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="in.thewire.linuxterminal.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".SearchResult"
+            android:label="Results"
+            android:launchMode="singleTop"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="in.thewire.linuxterminal.HomeActivity" />
+            <meta-data
+                android:name="android:app.searchable"
+                android:resource="@xml/searchable"
+                android:value="in.thewire.linuxterminal.HomeActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+
+            android:name=".IndividualActivity"
+            android:label="@string/title_activity_individual"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="in.thewire.linuxterminal.HomeActivity" />
+        </activity>
+        <activity
+            android:launchMode="singleTop"
+
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/SettingsTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="in.thewire.linuxterminal.HomeActivity" />
+        </activity>
+    </application>
+
+</manifest>
